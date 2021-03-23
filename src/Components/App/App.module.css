@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgb(128, 201, 238);
+  direction: rtl;
+  overflow: hidden;
+  font-family: 'Rubik', sans-serif;
+}
+
+.githubFlare {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.githubFlare > img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.ballotContainer {
+  position: relative;
+  background: rgb(128, 201, 238);
+  padding: 50px;
+}
+
+.ballotForm {
+  font-family: 'Rubik', sans-serif;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.inputGroup > label {
+  font-family: 'Rubik', sans-serif;
+}
+
+.inputGroup > input {
+  border: 1px solid #C1E4FE;
+  padding: 5px;
+  border-radius: 10px;
+  font-family: 'Rubik', sans-serif;
+  outline: none;
+  font-size: 18px;
+}
+
+.inputGroup > input:active {
+  border: 1px solid #4794cf;
+  padding: 5px;
+  border-radius: 10px;
+  font-family: 'Rubik', sans-serif;
+  outline: none;
+}
+
+button {
+  border: 1px solid #3899EC;
+  background-color: white;
+  font-family: 'Rubik', sans-serif;
+  padding: 7px;
+  font-size: 16px;
+  border-radius: 50px;
+  width: 100%;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.watermark {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: left;
+  width: 100%;
+  font-size: 12px;
+  color: rgba(0, 0, 0, .6);
+  visibility: hidden;
+}
+
+a {
+  color: #ff4b4b;
+}
+
+body[print-mode="true"] .watermark {
+  visibility: visible;
+}
+
+.messageContainer {
+  padding: 10px;
+}
