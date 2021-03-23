@@ -1,9 +1,6 @@
 import { isIos } from './ios';
 
-export const share = async (
-  dataUrl: string,
-  { forceDownload = false } = {}
-) => {
+export const share = async (dataUrl: string) => {
   if ((navigator as any).share && (window as any).fetch && !isIos) {
     const blob = await fetch(dataUrl).then((res) => res.blob());
     const file = new File([blob], 'petek.jpg', { type: blob.type });
