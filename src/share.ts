@@ -4,14 +4,12 @@ export const share = async (
 ) => {
   if ((navigator as any).share && (window as any).fetch && !forceDownload) {
     const blob = await fetch(dataUrl).then((res) => res.blob());
-    const file = new File([blob], 'petek.jpg', { type: blob.type });
-    await (navigator as any)
-      .share({
-        title: 'הצביעו לי!',
-        text: 'צרו את הפתק שלכם עכשיו באתר https://petek.design',
-        files: [file],
-      })
-      .catch(() => share(dataUrl, { forceDownload: true }));
+    const file = new File([blob], 'petek.jpg', { type: 'image/jpeg' });
+    await (navigator as any).share({
+      title: 'הצביעו לי!',
+      text: 'צרו את הפתק שלכם עכשיו באתר https://petek.design',
+      files: [file],
+    });
   } else {
     const a = document.createElement('a');
     a.href = dataUrl;
