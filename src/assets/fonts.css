@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "Frank Ruhl Libre";
+  src: url("./FrankRuhlLibre-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Frank Ruhl Libre";
+  src: url("./FrankRuhlLibre-Bold.ttf") format("truetype");
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url('./Rubik-Light.ttf') format("truetype");
+}
