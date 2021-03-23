@@ -34,6 +34,23 @@ function App() {
     share(dataUrl);
   };
 
+  const ballotSearchUrl = 'https://www.gov.il/apps/moin/bocharim/';
+  const reportBallotSearch = () => {
+    (window as any).ga?.(
+      'send',
+      'event',
+      'outbound',
+      'click',
+      ballotSearchUrl,
+      {
+        transport: 'beacon',
+        hitCallback: function () {
+          (document.location as any) = ballotSearchUrl;
+        },
+      }
+    );
+  };
+
   const renderEditor = () => {
     return (
       <>
@@ -85,9 +102,13 @@ function App() {
         )}
         <p>לא יודעים היכן אתם מצביעים?</p>
         <a
-          href="https://www.gov.il/apps/moin/bocharim/"
+          href={ballotSearchUrl}
           target="_blank"
           rel="noreferrer"
+          onClickCapture={() => {
+            reportBallotSearch();
+            return false;
+          }}
         >
           <button>לחצו כאן לאיתור הקלפי שלכם</button>
         </a>
