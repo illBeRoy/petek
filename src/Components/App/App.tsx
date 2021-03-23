@@ -24,7 +24,7 @@ function App() {
 
   const exportPicture = async () => {
     document.body.setAttribute('print-mode', 'true');
-    const dataUrl = await domToImage.toPng(
+    const dataUrl = await domToImage.toJpeg(
       document.getElementById('ballotContainer') as Node
     );
     document.body.setAttribute('print-mode', 'false');

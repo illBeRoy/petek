@@ -4,7 +4,7 @@ export const share = async (
 ) => {
   if ((navigator as any).share && (window as any).fetch && !forceDownload) {
     const blob = await fetch(dataUrl).then((res) => res.blob());
-    const file = new File([blob], 'petek.png', { type: blob.type });
+    const file = new File([blob], 'petek.jpg', { type: blob.type });
     await (navigator as any)
       .share({
         title: 'הצביעו לי!',
@@ -15,7 +15,7 @@ export const share = async (
   } else {
     const a = document.createElement('a');
     a.href = dataUrl;
-    a.download = 'פתק.png';
+    a.download = 'פתק.jpg';
     a.click();
   }
 };
