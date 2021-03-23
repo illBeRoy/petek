@@ -3,6 +3,7 @@ import domToImage from 'dom-to-image';
 import { Ballot } from '../Ballot/Ballot';
 import { generateRandomPartyBallot, PartyBallot } from '../../ballot';
 import { share } from '../../share';
+import { isIos } from '../../ios';
 import githubIcon from '../../assets/github.png';
 import style from './App.module.css';
 
@@ -76,6 +77,12 @@ function App() {
     return (
       <span className={style.messageContainer}>
         <h1>בהצלחה בבחירות! ואל תשכחו - צאו להצביע!</h1>
+        {isIos && (
+          <p>
+            אתם משתמשים באייפון. לכן, עליכם ללחוץ על ההורדה שתופיע לכם ולשתפה עם
+            חבריכם
+          </p>
+        )}
         <p>לא יודעים היכן אתם מצביעים?</p>
         <a
           href="https://www.gov.il/apps/moin/bocharim/"
